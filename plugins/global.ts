@@ -44,7 +44,6 @@ export default defineNuxtPlugin(() => {
     error_message: {
       required: 'Field required',
       format: 'Format not matched',
-      format_url: `you have entered an invalid website address(make sure to include 'http//' or 'https//')`
     },
   };
   return {
