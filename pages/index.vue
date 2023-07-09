@@ -22,7 +22,7 @@
         </div>
       </template>
       <template v-for="(row, index) in calendar.data" :key="index">
-        <Calendar :item="row" :index="index" />
+        <Calendar :item="row" :index="index" @set-handler="setHandler"/>
       </template>
     </section>
   </main>
@@ -32,6 +32,18 @@ const { $monthlyCalendar, $days } = useNuxtApp();
 const calendar = useCalendarStore();
 
 const events = useEventsStore();
+
+function setHandler(item) {
+  calendar.setCurrentDate({
+    year: item.date.getFullYear(),
+    month: item.date.getMonth(),
+    day: item.date.getDate(),
+    full_date: item.date,
+  });
+  calendar.setData(
+    $monthlyCalendar(calendar.currentDate.year, calendar.currentDate.month, 1)
+  );
+}
 
 function exportEvents() {
   const filename = "events.json";

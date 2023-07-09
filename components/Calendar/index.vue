@@ -54,6 +54,8 @@ const props = defineProps({
   },
 });
 
+const emit = defineEmits(["setHandler"])
+
 const events = useEventsStore();
 
 const modalData = reactive({
@@ -75,7 +77,9 @@ const isActive = ref(false);
 const allEvents = computed(() => events.data?.filter((event) => event.calendar_id === props.item.id));
 
 function setHandler(item) {
-  if (item.disabled) return;
+  if (item.disabled) {
+    return emit("setHandler", item)
+  };
   modalData.isOpen = true;
   isActive.value = true;
 }
