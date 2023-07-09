@@ -72,7 +72,7 @@ const modalAlert = reactive({
 
 const isActive = ref(false);
 
-const allEvents = computed(() => events.data.filter((event) => event.calendar_id === props.item.id));
+const allEvents = computed(() => events.data?.filter((event) => event.calendar_id === props.item.id));
 
 function setHandler(item) {
   if (item.disabled) return;
