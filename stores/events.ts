@@ -14,7 +14,7 @@ export const useEventsStore = defineStore("events", () => {
   }
 
   function limiter(id: number) {
-    return data.value.filter((event: any) => id === event.calendar_id).length < 3
+    return data.value?.filter((event: any) => id === event.calendar_id).length < 3
   };
 
   return {
