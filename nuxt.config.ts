@@ -9,6 +9,8 @@ export default defineNuxtConfig({
         autoImports: ["defineStore", "acceptHMRUpdate"],
       },
     ],
+    "@pinia-plugin-persistedstate/nuxt",
+    "nuxt-icon",
   ],
   imports: {
     dirs: ["stores", "locales"],

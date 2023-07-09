@@ -1,25 +1,13 @@
 module.exports = {
   "env": {
     "browser": true,
-    "es2021": true
+    "es2021": true,
+    "node": true,
   },
   "extends": [
-    "eslint:recommended",
     "plugin:@typescript-eslint/recommended",
-    "plugin:vue/vue3-essential"
-  ],
-  "overrides": [
-    {
-      "env": {
-        "node": true
-      },
-      "files": [
-        ".eslintrc.{js,cjs}"
-      ],
-      "parserOptions": {
-        "sourceType": "script"
-      }
-    }
+    "plugin:nuxt/recommended",
+    "plugin:vue/vue3-recommended",
   ],
   "parserOptions": {
     "ecmaVersion": "latest",
@@ -31,17 +19,8 @@ module.exports = {
     "vue"
   ],
   "rules": {
-    "indent": [
-      "error",
-      2
-    ],
-    "quotes": [
-      "error",
-      "double"
-    ],
-    "semi": [
-      "error",
-      "always"
-    ]
+    "vue/multi-word-component-names": 0,
+    "vue/no-v-html": 0,
+    "@typescript-eslint/no-explicit-any": 0,
   }
 };

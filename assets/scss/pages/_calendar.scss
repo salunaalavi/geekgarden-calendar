@@ -1,0 +1,91 @@
+.calendar {
+  &__title {
+    text-align: center;
+    height: $spacer-3;
+    h1 {
+      @include h1-title;
+    }
+  }
+
+  &__table {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+
+    &--cell {
+      border: 1px solid $tertiary;
+      height: calc((100vh - ($spacer-3 + $spacer-2)) / 7);
+      @include flex-all-center;
+      position: relative;
+      flex-direction: column;
+
+      &:is(div) {
+        border: 0;
+        background-color: $primary;
+        color: white;
+
+        h2 {
+          @include h2-title;
+        }
+      }
+
+      &:nth-child(7n) {
+        &:is(div) {
+          background-color: red;
+        }
+
+        & .calendar__table--cell-date:not(.active):not(.disabled) {
+          background-color: red;
+        }
+      }
+
+      &:nth-child(7n-1) {
+        &:is(div) {
+          background-color: red;
+        }
+
+        & .calendar__table--cell-date:not(.active):not(.disabled) {
+          background-color: red;
+        }
+      }
+
+      &.active {
+        border-color: $secondary;
+      }
+
+      &-day {
+        position: absolute;
+      }
+
+      &-date {
+        position: absolute;
+        display: flex;
+        top: 5px;
+        right: 5px;
+        justify-content: space-around;
+        align-items: center;
+        width: $spacer-2;
+        border-radius: $rounded;
+        background-color: $primary;
+
+        &.disabled {
+          background-color: $tertiary;
+        }
+
+        &.active {
+          background-color: $secondary;
+        }
+      }
+
+      &-event {
+        @include flex-all-center;
+        height: calc(100% / 3);
+        width: 100%;
+        border: 1px solid $primary;
+      }
+    }
+  }
+
+  svg {
+    cursor: pointer;
+  }
+}
