@@ -1,0 +1,12 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap");
+
+* {
+  font-family: "Inter", sans-serif;
+}
+
+@import "libs/variables";
+@import "libs/mixins";
+@import "layouts/main";
+@import "pages/calendar";
+@import "components/atomics/input";
+@import "components/atomics/button";

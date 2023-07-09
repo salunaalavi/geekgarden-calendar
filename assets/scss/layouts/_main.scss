@@ -1,0 +1,19 @@
+.main {
+  padding: $spacer-1 $spacer-3;
+
+  h1 {
+    @include h1-regular;
+  }
+
+  h3 {
+    @include h3-regular;
+  }
+
+  p {
+    @include p-regular;
+  }
+
+  label {
+    @include p-regular;
+  }
+}
